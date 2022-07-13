@@ -5,12 +5,37 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Specificity</title>
+
+        <style>
+            #third{
+                color: red;
+            }
+            .heading{
+                color:rgba(128, 255, 0, 0.384);
+            }
+            h1{
+                color: tomato;
+                background-color: aqua;
+            }
+            h1{
+                color: cadetblue;
+            }
+            h1{
+                color: blue;
+            }
+            h1::after{
+                content: 'Hello Borda';
+            }
+            h1::before{
+                content: 'Borda';
+            }
+        </style>
     </head>
 
     <body>
-        <h1>My Heading Number -1</h1>
-        <h1>My Heading Number -2</h1>
-        <h1>My Heading Number -3</h1>
-        <h1>My Heading Number -4</h1>
+        <h1 class="heading"> My Heading Number -1 </h1>
+        <h1 class="heading"> My Heading Number -2 </h1>
+        <h1 id="third" class="heading"> My Heading Number -3 </h1>
+        <h1 class="heading"> My Heading Number -4 </h1>
     </body>
 </html>

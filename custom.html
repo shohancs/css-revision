@@ -7,25 +7,50 @@
         <title>Custom Property</title>
 
         <style>
+            :root{
+                --side-width: 200px;
+                --dark-border: 2px solid black;
+                --main-color: orange;
+                --border-color: slateblue;
+                --background-color: slateblue;
+            }
             h1{
-                color: slateblue;
+                color: var(--main-color);
             }
 
             p{
-                color: slateblue;
+                color: var(--main-color);
             }
 
             h2{
-                border: 2px solid slateblue;
-                color: slateblue;
+                border: 2px solid var(--border-color);
+                color: var(--main-color);
             }
 
             h6{
-                background-color: slateblue;
+                background-color: var(--background-color);
+                color: var(--main-color);
             }
 
             footer{
-                color: slateblue;
+                color: var(--main-color);
+                border: var(--dark-border);
+                clear: both;
+            }
+            
+            .side-nav, .blogs{
+                float: left;
+                height: 500px;
+            }
+            
+            aside{
+                background-color: springgreen;
+                width: var(--side-width);
+            }
+
+            .blogs{
+                background-color: tomato;
+                width: calc(100% - 3*var(--side-width));
             }
         </style>
     </head>
@@ -39,6 +64,14 @@
         <main>
             <h2>My awesome content</h2>
             <h6>My tiny heading</h6>
+
+            <section>
+                <aside class="side-nav">My Side Navigation</aside>
+
+                <div class="blogs">
+                    <h3>Blogs</h3>
+                </div>
+            </section>
         </main>
 
         <footer>
